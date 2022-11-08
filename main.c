@@ -7,16 +7,12 @@ int main(void)
 {
 	char c;
 	FILE*fp=NULL;
+	char str[30];
 	
 	fp=fopen("sample.txt","r");
 	
-	if(fp==NULL)
-		printf("파일을 못열음\n");
-	
-	c=fgetc(fp);
-	
-	while((c=fgetc(fp))!=EOF)
-		putchar(c);
+	while(fgets(str,30,fp)!=NULL)
+		printf("%s",str);
 		
 	fclose(fp);
 	
