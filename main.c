@@ -5,22 +5,20 @@
 
 int main(void) 
 {
-	int i=0;
+	int i;
 	char src[100];
 	FILE*fp;
 	
-	do{
-		printf("input a word:");
-		gets(src);
-		
-		fp=fopen("sample.txt","a");	
-		fprintf(fp,"%s\n",src);
-		fclose(fp);
-		i++;
-	}
-	while(i<3);
+	fp=fopen("sample.txt","w");
 	
-	printf("\n");
+	for(i=0;i<3;i++){
+		printf("input a word:");
+		scanf("%s",&src);
+			
+		fprintf(fp,"%s\n",src);
+	}
+	
+	fclose(fp);
 	
 	return 0;
 }
